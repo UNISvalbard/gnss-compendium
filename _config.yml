@@ -29,5 +29,4 @@ html:
   use_repository_button: true
   extra_navbar: ""
   use_edit_page_button: true
-  announcement: "<i class='fa-solid fa-square-poll-vertical'></i> Found this tutorial helpful? Please participate in the survey!"
-
+  announcement: "Found this tutorial helpful? Please participate in the survey!"
