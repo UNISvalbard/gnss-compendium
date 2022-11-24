@@ -102,16 +102,22 @@ Ask the UNIS Arctic Geology GIS admin for the credentials.
 RTK corrections are transmitted in the *RTCM v3* format, and use an automated coordinate system.
 Finally, test the connection; hopefully all checkboxes are successfully checked.
 
-Leica Captivate should now be running in RTK mode.
-The enabled configuration can be easily checked by using the *RTK Data Link*; i.e., simply click the smartphone icon.
-The **RTK Data Link menu** also allows you to enable and disable the connection, and provides an overview of successfull corrections in the past minute.
-
 ```{admonition} Available through YouTube.
 :class: seealso
 <iframe width=100% height="400" src="https://www.youtube.com/embed/3CebRc33RUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
+Leica Captivate should now be running in RTK mode.
+The enabled configuration can be easily checked by using the *RTK Data Link*; i.e., simply click the smartphone icon.
+The **RTK Data Link menu** also allows you to enable and disable the connection, and provides an overview of successfull corrections in the past minute.
+
 ## Data Acquisition in rover mode
+
+```{admonition} Work in progress
+:class: warning
+
+This will be updated when ready :)
+```
 
 - video of setup of the antenna (on pole etc)
 - video of setup of the RAW GNSS data acquisition and interval
@@ -125,9 +131,22 @@ The **RTK Data Link menu** also allows you to enable and disable the connection,
 
 ### Raw data acquisition
 
+```{admonition} Work in progress
+:class: warning
+
+This will be updated when ready :)
+```
+
 - video of normal data collection.
 
+(software:setup:base)=
 ## Data Acquisition in base station mode
+
+```{admonition} Work in progress
+:class: warning
+
+This will be updated when ready :)
+```
 
 - video of setting up the base station mode.
 
@@ -137,4 +156,10 @@ Post-processing kinematics (PPK) involves applying corrections after measuring o
 This typically involves downloading the control station data as reference data (*base*) for the correction of raw data acquired from the *rover*.
 Not much can be done in the field for this, except for collecting the raw data at 1 Hz frequencies.
 
-##
+```{admonition} Did you know?
+:class: suggestion
+
+One of the Leica GS sensors can be set to *base* station mode while using the other to record *rover* data.
+The *base* station data recorded in this way can be used as a substitute for Kartverket data, especially when recording data 10-15 km away from the nearest station.
+See {ref}`hardware:setup:base` and {ref}`software:setup:base` on how to set things up.
+```

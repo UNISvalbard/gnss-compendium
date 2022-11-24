@@ -1,5 +1,11 @@
 # Leica Infinity v4.0.0
 
+```{admonition} Work in progress
+:class: warning
+
+This will be updated when ready :)
+```
+
 ## Create a project
 
 ```{figure} assets/Leica_Infinity_New_Project.gif
