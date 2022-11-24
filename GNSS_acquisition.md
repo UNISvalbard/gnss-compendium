@@ -1,5 +1,8 @@
 # GNSS Data acquisition with Leica Captivate
 
+Once the hardware has been setup, it is time to power up the Leica controller with Leica Captivate software.
+This software simplifies the data project management and acquisition.
+
 ## Create a new job
 
 All measurements belonging to the same project should ideally be collected together.
