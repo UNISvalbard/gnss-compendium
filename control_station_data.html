@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Downloading base station dGNSS data &#8212; UNIS GNSS Compendium</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Leica Infinity v4.0.0" href="leica_infinity.html" />
+    <link rel="prev" title="GNSS Data acquisition with Leica Captivate" href="GNSS_acquisition.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UNIS GNSS Compendium</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="readme.html">
+                    Welcome to the UNIS GNSS Compendium
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="instrument_setup.html">
+   Instrument setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GNSS_acquisition.html">
+   Simple data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Downloading reference data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="leica_infinity.html">
+   Leica Infinity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="updating.html">
+   Maintenance &amp; Updates
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/unisvalbard/gnss-compendium"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/unisvalbard/gnss-compendium/issues/new?title=Issue%20on%20page%20%2Fcontrol_station_data.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/control_station_data.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-lyrs-base-station-data">
+   Accessing LYRS base station data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-way-of-downloading-data">
+     The Python way of downloading data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Downloading base station dGNSS data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-lyrs-base-station-data">
+   Accessing LYRS base station data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-way-of-downloading-data">
+     The Python way of downloading data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="downloading-base-station-dgnss-data">
+<h1>Downloading base station dGNSS data<a class="headerlink" href="#downloading-base-station-dgnss-data" title="Permalink to this headline">#</a></h1>
+<p>For post processing of the acquired dGNSS data in the field we require additional data from a base station.
+At UNIS we have access to the Longyearbyen base station data (“LYRS”) through Kartverket.</p>
+<section id="accessing-lyrs-base-station-data">
+<h2>Accessing LYRS base station data<a class="headerlink" href="#accessing-lyrs-base-station-data" title="Permalink to this headline">#</a></h2>
+<p>This data can be downloaded through the <span class="xref myst">Kartverket’s etpos website</span>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">etpos.kartverket.no</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Credentials can either be privately acquired from kartverket, or are available to UNIS students and staff (ask Peter Betlem or Sara Mollie Cohen).
+The webportal provides an ftp-like interface, in which files are sorted based on the following syntax:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">/rnx3/&lt;duration&gt;/&lt;rate&gt;/&lt;year&gt;/&lt;doy&gt;/&lt;name&gt;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Herein <code class="docutils literal notranslate"><span class="pre">&lt;duration&gt;</span></code> specifies the data’s timeframe, typically either 24h (1 large file per day) or 1h (24 smaller files per day);
+<code class="docutils literal notranslate"><span class="pre">&lt;rate&gt;</span></code>, the sampling frequency of the data, typically either 30s (averaged over half a minute interval) or 1s (raw data at 1 Hz frequency);
+<code class="docutils literal notranslate"><span class="pre">&lt;year&gt;</span></code>, the year of acquisition;
+<code class="docutils literal notranslate"><span class="pre">&lt;doy&gt;</span></code>, the day of the year, starting with 001 for 1 January; and,
+<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>, the 4-letter code of the ground station, <em>LYRS</em> for Longyearbyen.</p>
+<p>In general, it is easiest to download the 24 hour interval with 1 second data rate to cover a full day of work.
+However, if you know the exact timeframe of data acquisition, specifically targeting 1h timeframes significantly lowers the processing time.</p>
+<p><a class="reference internal" href="#etpos-kartverket"><span class="std std-numref">Fig. 1</span></a> shows how to download all required data for a single day, which can be adapted for 1-hour data downloads.
+This will need to be done for all days/hours in which location data were acquired in the field.</p>
+<figure class="align-default" id="etpos-kartverket">
+<img alt="_images/etpos_kartverket.gif" src="_images/etpos_kartverket.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Downloading all required rnx3 data for day 90 of the year 2022.</span><a class="headerlink" href="#etpos-kartverket" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="the-python-way-of-downloading-data">
+<h3>The Python way of downloading data<a class="headerlink" href="#the-python-way-of-downloading-data" title="Permalink to this headline">#</a></h3>
+<p>The script below provides an alternative way of downloading the data, implementing the Python programming language.
+Make sure to specify the usernane, password, data_storage_path and dates.</p>
+<div class="warning admonition">
+<p class="admonition-title">Required packages</p>
+<p>The script requires some additional packages.
+These can be easily downloaded through the conda package manager:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda install paramiko -c conda-forge</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">paramiko</span>
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;etpos.kartverket.no&quot;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># fill this out</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># fill this out</span>
+
+<span class="n">start_date</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># fill this out in YYYYMMDD format, e.g. 19th April 2022 = 20220419</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># fill this out in YYYYMMDD format, e.g. 19th April 2022 = 20220419</span>
+<span class="n">station_short</span> <span class="o">=</span> <span class="s2">&quot;LYRS&quot;</span> <span class="c1"># 4-letter station name</span>
+
+<span class="n">data_storage_path</span> <span class="o">=</span> <span class="s2">&quot;data&quot;</span> <span class="c1"># path to where to store the data.</span>
+
+<span class="k">def</span> <span class="nf">convert_start_end_dates_to_year_day_of</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span><span class="n">end_date</span><span class="p">):</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">end_date</span><span class="p">,</span> <span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">start_date</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">start_date</span><span class="o">.</span><span class="n">timetuple</span><span class="p">()</span><span class="o">.</span><span class="n">tm_yday</span><span class="p">,</span> <span class="n">end_date</span><span class="o">.</span><span class="n">timetuple</span><span class="p">()</span><span class="o">.</span><span class="n">tm_yday</span>
+
+<span class="k">def</span> <span class="nf">progressbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; progressbar for the paramiko</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">bar_len</span> <span class="o">=</span> <span class="mi">60</span>
+    <span class="n">filled_len</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">bar_len</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">percents</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">100.0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="s1">&#39;=&#39;</span> <span class="o">*</span> <span class="n">filled_len</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">bar_len</span> <span class="o">-</span> <span class="n">filled_len</span><span class="p">)</span>
+    <span class="n">filesize</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">))</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> MB&#39;</span> <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">1024</span> <span class="k">else</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> KB&#39;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">bar</span><span class="si">}</span><span class="s1">] </span><span class="si">{</span><span class="n">percents</span><span class="si">}</span><span class="s1">% </span><span class="si">{</span><span class="n">filesize</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+<span class="n">year</span><span class="p">,</span> <span class="n">start_day</span><span class="p">,</span> <span class="n">end_day</span> <span class="o">=</span>  <span class="n">convert_start_end_dates_to_year_day_of</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span><span class="n">end_date</span><span class="p">)</span>
+
+<span class="n">data_storage_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_storage_path</span><span class="p">)</span>
+<span class="n">data_storage_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">Transport</span><span class="p">((</span><span class="n">hostname</span><span class="p">,</span><span class="mi">22</span><span class="p">))</span> <span class="k">as</span> <span class="n">transport</span><span class="p">:</span>
+    <span class="c1"># SFTP FIXES</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">default_window_size</span><span class="o">=</span><span class="n">paramiko</span><span class="o">.</span><span class="n">common</span><span class="o">.</span><span class="n">MAX_WINDOW_SIZE</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">packetizer</span><span class="o">.</span><span class="n">REKEY_BYTES</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>  <span class="c1"># 1TB max, this is a security degradation!</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">packetizer</span><span class="o">.</span><span class="n">REKEY_PACKETS</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>  <span class="c1"># 1TB max, this is a security degradation!</span>
+    <span class="c1"># / SFTP FIXES</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">SFTPClient</span><span class="o">.</span><span class="n">from_transport</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span> <span class="k">as</span> <span class="n">sftp</span><span class="p">:</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection successfully established ... &quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_day</span><span class="p">,</span> <span class="n">end_day</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">sftp</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/rnx3/24hour/1sec/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">day</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+                <span class="n">directory_structure</span> <span class="o">=</span> <span class="n">sftp</span><span class="o">.</span><span class="n">listdir_attr</span><span class="p">()</span>
+                <span class="n">lyrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">attr</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">directory_structure</span> <span class="k">if</span> <span class="s2">&quot;LYRS&quot;</span> <span class="ow">in</span> <span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="p">]</span>
+
+                <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">lyrs</span><span class="p">:</span>
+                    <span class="n">sftp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_storage_path</span><span class="p">,</span><span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">progressbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="p">))</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloaded </span><span class="si">{</span><span class="n">attr</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unable to download selected dates. Check dates or contact Kartverket...&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">pass</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="GNSS_acquisition.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">GNSS Data acquisition with Leica Captivate</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="leica_infinity.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Leica Infinity v4.0.0</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Peter Betlem<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

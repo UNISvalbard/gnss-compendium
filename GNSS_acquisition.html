@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>GNSS Data acquisition with Leica Captivate &#8212; UNIS GNSS Compendium</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Downloading base station dGNSS data" href="control_station_data.html" />
+    <link rel="prev" title="Instrument setup" href="instrument_setup.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UNIS GNSS Compendium</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="readme.html">
+                    Welcome to the UNIS GNSS Compendium
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="instrument_setup.html">
+   Instrument setup
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Simple data acquisition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="control_station_data.html">
+   Downloading reference data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="leica_infinity.html">
+   Leica Infinity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="updating.html">
+   Maintenance &amp; Updates
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/unisvalbard/gnss-compendium"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/unisvalbard/gnss-compendium/issues/new?title=Issue%20on%20page%20%2FGNSS_acquisition.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/GNSS_acquisition.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-job">
+   Create a new job
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#real-time-kinematics">
+   Real-time kinematics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wlan-connection">
+     WLAN connection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ntrip-svalbard">
+     NTRIP Svalbard
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-acquisition-in-rover-mode">
+   Data Acquisition in rover mode
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rtk-measurements">
+     RTK Measurements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#raw-data-acquisition">
+     Raw data acquisition
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-acquisition-in-base-station-mode">
+   Data Acquisition in base station mode
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#post-processing-kinematics">
+   Post-processing kinematics
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>GNSS Data acquisition with Leica Captivate</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-job">
+   Create a new job
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#real-time-kinematics">
+   Real-time kinematics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wlan-connection">
+     WLAN connection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ntrip-svalbard">
+     NTRIP Svalbard
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-acquisition-in-rover-mode">
+   Data Acquisition in rover mode
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rtk-measurements">
+     RTK Measurements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#raw-data-acquisition">
+     Raw data acquisition
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-acquisition-in-base-station-mode">
+   Data Acquisition in base station mode
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#post-processing-kinematics">
+   Post-processing kinematics
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="gnss-data-acquisition-with-leica-captivate">
+<h1>GNSS Data acquisition with Leica Captivate<a class="headerlink" href="#gnss-data-acquisition-with-leica-captivate" title="Permalink to this headline">#</a></h1>
+<p>Once the hardware has been setup, it is time to power up the Leica controller with Leica Captivate software.
+This software simplifies the data project management and acquisition.</p>
+<section id="create-a-new-job">
+<h2>Create a new job<a class="headerlink" href="#create-a-new-job" title="Permalink to this headline">#</a></h2>
+<p>All measurements belonging to the same project should ideally be collected together.
+Leica Captivate uses <strong>Jobs</strong> for this.
+Switching between jobs and creating new jobs is relatively simple.
+To switch between jobs, simply swipe until the right one is in the centre of the screen.
+New jobs are created by clicking on <strong>Jobs</strong>, then proceeding to clicking <strong>New</strong>.
+It is also in this screen that you can edit or delete jobs.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Available through YouTube.</p>
+<iframe width=100% height=400 src="https://www.youtube.com/embed/ibuUVsF1R0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>All jobs should be provided with a <strong>Name</strong>, <strong>Description</strong>, and information on the <strong>Creator</strong>.
+Finally, make sure to collect the correct <strong>Coordinate system</strong>; <strong>WGS 1984</strong> typically works in Svalbard, but may also be replaced with <strong>EUREF89</strong>.</p>
+<div class="warning admonition">
+<p class="admonition-title">No height reference model available!</p>
+<p>Svalbard for the time being lacks a height reference model.
+Data may, as such, be off from <em>reality</em>; e.g., shoreline data may actually be reported as significantly above or below 0 metres.
+Hopefully, this will become available in the next few years.
+Until then, one may use the global <a class="reference external" href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">Earth Gravitational Model (EGM) 2008</a> for corrections.</p>
+</div>
+<p>With the project correctly set up, you can start with the collection of data.
+The next few sections help with the setup of real-time kinematics corrections, aided by control station data.
+If this is of no interest, skip ahead to the section on data acquisition and post-processing kinematics.</p>
+</section>
+<section id="real-time-kinematics">
+<h2>Real-time kinematics<a class="headerlink" href="#real-time-kinematics" title="Permalink to this headline">#</a></h2>
+<p>Real-time kinematics (RTK) enable the live-integration of reference data to correct positional errors down to centimetres.
+Typically, RTK correction data is provided by a control station within a 10-15 kilometre range.
+Measurements beyond this range suffer exponentially increasing errors, reducing the effectiveness of performing differential measurements.
+In Svalbard, Kartverket operates control stations in both Longyearbyen and Ny Ålesund - high-precision GNSS data acquisition elsewhere requires the use of mobile base stations and/or post-processing kinematics (PPK).</p>
+<section id="wlan-connection">
+<h3>WLAN connection<a class="headerlink" href="#wlan-connection" title="Permalink to this headline">#</a></h3>
+<p>Svalbard’s real-time corrections are available through Kartverket’s NTRIP services.
+However, the Leica Captivate controllers need internet access for this to work.
+The easiest is to set up a local hotspot with your phone, then connect to the hotspot with Leica Captivate.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Available through YouTube.</p>
+<iframe width=100% height=400 src="https://www.youtube.com/embed/shBbYNHp4K8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>Proceed to the <strong>Connections (1)</strong> screen, then select <strong>Internet wizard (5)</strong>.
+Select <strong>WLAN</strong>, and search for your mobile hotspot (in the video referred to as <em>mobile internet</em>).
+Sign in with the hotspot credentials, then continue with the connection test.
+If all went well, you return to the <strong>startup screen</strong>.</p>
+</section>
+<section id="ntrip-svalbard">
+<h3>NTRIP Svalbard<a class="headerlink" href="#ntrip-svalbard" title="Permalink to this headline">#</a></h3>
+<p>After successfully connecting Leica Captivate to the internet, you can configure the NTRIP service.
+Below is an overview of the key parameters, though an up to date list is available at <a class="reference external" href="https://www.kartverket.no/til-lands/posisjon/brukerveiledning-posisjonstjenester">https://www.kartverket.no/til-lands/posisjon/brukerveiledning-posisjonstjenester</a>.</p>
+<p><strong>IP address:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">159.162.103.14</span>
+</pre></div>
+</div>
+<p><strong>Port:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2101</span>
+</pre></div>
+</div>
+<p><strong>Mountpoint:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SVALBARD</span>
+</pre></div>
+</div>
+<p><strong>GNSS-system:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GPS</span><span class="o">+</span><span class="n">GLO</span>
+</pre></div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Available through YouTube.</p>
+<iframe width=100% height="400" src="https://www.youtube.com/embed/FKqjSqGYeYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>Once again proceed to <strong>Connections (1)</strong>, then head over to <strong>RTK rover wizard (3)</strong> to configure the RTK services.
+Either <strong>Create a new profile</strong>, or select <strong>Edit an existing profile</strong> to update the existing configuration.
+The pre-configured <em>Kartverket</em> RTK profile used the parameters above and successfully connects to the Svalbard NTRIP service.
+Make sure to specify <strong>WLAN</strong> as the RTK device connection; this is after all what is used to connect to the internet.
+Double check the <strong>Network name</strong>, making sure this is the same name as previously specified for the mobile hotspot.
+Then specify the RTK server IP address, the mountpoint, tick the checkbox to <strong>Receive RTK corrections from RTK network</strong>, using the <em>Nearest</em> <strong>Network type</strong>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Login prompted?</p>
+<p>The username and password for Kartverket’s NTRIP service in Svalbard are the same as those used for the Kartverket data download services.
+Ask the UNIS Arctic Geology GIS admin for the credentials.</p>
+</div>
+<p>RTK corrections are transmitted in the <em>RTCM v3</em> format, and use an automated coordinate system.
+Finally, test the connection; hopefully all checkboxes are successfully checked.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Available through YouTube.</p>
+<iframe width=100% height="400" src="https://www.youtube.com/embed/3CebRc33RUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>Leica Captivate should now be running in RTK mode.
+The enabled configuration can be easily checked by using the <em>RTK Data Link</em>; i.e., simply click the smartphone icon.
+The <strong>RTK Data Link menu</strong> also allows you to enable and disable the connection, and provides an overview of successfull corrections in the past minute.</p>
+</section>
+</section>
+<section id="data-acquisition-in-rover-mode">
+<h2>Data Acquisition in rover mode<a class="headerlink" href="#data-acquisition-in-rover-mode" title="Permalink to this headline">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Work in progress</p>
+<p>This will be updated when ready :)</p>
+</div>
+<ul class="simple">
+<li><p>video of setup of the antenna (on pole etc)</p></li>
+<li><p>video of setup of the RAW GNSS data acquisition and interval</p></li>
+</ul>
+<section id="rtk-measurements">
+<h3>RTK Measurements<a class="headerlink" href="#rtk-measurements" title="Permalink to this headline">#</a></h3>
+<div class="seealso admonition">
+<p class="admonition-title">Available through YouTube.</p>
+<iframe width=100% height="400" src="https://www.youtube.com/embed/oNelh531vFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</section>
+<section id="raw-data-acquisition">
+<h3>Raw data acquisition<a class="headerlink" href="#raw-data-acquisition" title="Permalink to this headline">#</a></h3>
+<div class="warning admonition">
+<p class="admonition-title">Work in progress</p>
+<p>This will be updated when ready :)</p>
+</div>
+<ul class="simple">
+<li><p>video of normal data collection.</p></li>
+</ul>
+</section>
+</section>
+<section id="data-acquisition-in-base-station-mode">
+<span id="software-setup-base"></span><h2>Data Acquisition in base station mode<a class="headerlink" href="#data-acquisition-in-base-station-mode" title="Permalink to this headline">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Work in progress</p>
+<p>This will be updated when ready :)</p>
+</div>
+<ul class="simple">
+<li><p>video of setting up the base station mode.</p></li>
+</ul>
+</section>
+<section id="post-processing-kinematics">
+<h2>Post-processing kinematics<a class="headerlink" href="#post-processing-kinematics" title="Permalink to this headline">#</a></h2>
+<p>Post-processing kinematics (PPK) involves applying corrections after measuring of the GNSS data.
+This typically involves downloading the control station data as reference data (<em>base</em>) for the correction of raw data acquired from the <em>rover</em>.
+Not much can be done in the field for this, except for collecting the raw data at 1 Hz frequencies.</p>
+<div class="suggestion admonition">
+<p class="admonition-title">Did you know?</p>
+<p>One of the Leica GS sensors can be set to <em>base</em> station mode while using the other to record <em>rover</em> data.
+The <em>base</em> station data recorded in this way can be used as a substitute for Kartverket data, especially when recording data 10-15 km away from the nearest station.
+See <a class="reference internal" href="instrument_setup.html#hardware-setup-base"><span class="std std-ref">Base station mode setup</span></a> and <a class="reference internal" href="#software-setup-base"><span class="std std-ref">Data Acquisition in base station mode</span></a> on how to set things up.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="instrument_setup.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Instrument setup</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="control_station_data.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Downloading base station dGNSS data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Peter Betlem<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
