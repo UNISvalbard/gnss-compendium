@@ -1,4 +1,5 @@
-# Downloading base station dGNSS data
+(base:station:reference:data:download)=
+# Downloading base station GNSS data
 
 For post processing of the acquired dGNSS data in the field we require additional data from a base station.
 At UNIS we have access to the Longyearbyen base station data ("LYRS") through Kartverket.

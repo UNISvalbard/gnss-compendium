@@ -66,7 +66,7 @@ This requires the raw data to be stored at 1.0s intervals.
 ```
 
 (hardware:setup:base)=
-### Base station mode setup
+### Enable base station mode
 
 The Leica GS sensors can be easily turned into a portable *base station*.
 Simply connect to the sensor from with Leica Captivate, then proceed by clicking **Switch to base (3)**.

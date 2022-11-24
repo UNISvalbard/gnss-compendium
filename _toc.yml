@@ -13,7 +13,7 @@ parts:
   - file: control_station_data
     title: Downloading reference data
   - file: leica_infinity
-    title: Leica Infinity
+    title: Post-kinematic processing
   - file: updating
     title: Maintenance & Updates
 - caption: External Links
