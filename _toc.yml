@@ -3,14 +3,20 @@
 
 format: jb-book
 root: readme
-chapters:
-- file: instrument_setup
-  title: Instrument setup
-- file: GNSS_acquisition
-  title: Simple data acquisition
-- file: control_station_data
-  title: Downloading reference data
-- file: leica_infinity
-  title: Leica Infinity
-- file: updating
-  title: Maintenance & Updates
+parts:
+- caption: GNSS Tutorial
+  chapters:
+  - file: instrument_setup
+    title: Instrument setup
+  - file: GNSS_acquisition
+    title: Simple data acquisition
+  - file: control_station_data
+    title: Downloading reference data
+  - file: leica_infinity
+    title: Leica Infinity
+  - file: updating
+    title: Maintenance & Updates
+- caption: External Links
+  chapters:
+  - url: https://unisvalbard.github.io/exbooks/
+    title: UNIS Compendium Overview

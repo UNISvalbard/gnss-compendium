@@ -9,3 +9,14 @@ Check out the content pages bundled with this executable book to learn more abou
 
 ```{tableofcontents}
 ```
+
+
+## Suggestions and or fixes?
+
+```{figure} assets/github_tut.gif
+:name: github_tut
+
+This page uses [Github](https://youtu.be/w3jLJU7DT5E) as a backbone.
+All it takes is a [Github account](https://github.com/join), which even comes with student benefits.
+Once connected, feel free to open an issue as per the above - whether suggesting improvements or highlighting bugs.
+```
