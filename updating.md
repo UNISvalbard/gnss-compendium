@@ -1,4 +1,4 @@
-# Updating the Leica Hardware version
+# Updating the Leica Hardware firmware
 
 The antenna and controller need to be updated individually, one major software version at a time.
 Proceed by going to myworld.leica-geosystems.com and login with the admin account.
@@ -24,9 +24,9 @@ The GS16 antenna is different in that it uses a a microsd card rather than a ful
 Apparently, only "Leica SD" cards are supposed to work... But give it a try anyway...
 ```
 
-```{admonition} Available through YouTube.
-:class: seealso
 The following video details how to update the Leica GS16 and GS18 antennas using a Windows computer over Bluetooth.
 
+```{admonition} Available through YouTube.
+:class: seealso
 <iframe width=100% height="400" src="https://www.youtube.com/embed/VriaH4V3GCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
