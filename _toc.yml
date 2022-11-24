@@ -4,6 +4,8 @@
 format: jb-book
 root: readme
 chapters:
+- file: instrument_setup
+  title: Instrument setup
 - file: GNSS_acquisition
   title: Simple data acquisition
 - file: control_station_data
