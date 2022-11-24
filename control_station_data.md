@@ -5,7 +5,7 @@ At UNIS we have access to the Longyearbyen base station data ("LYRS") through Ka
 
 ## Accessing LYRS base station data
 
-This data can be downloaded through the [Kartverket's etpos website](etpos.kartverket.no):
+This data can be downloaded through the [Kartverket's etpos website](https://etpos.kartverket.no):
 
 ```yaml
 etpos.kartverket.no
