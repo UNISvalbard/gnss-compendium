@@ -153,6 +153,8 @@ The quality warning may be ignored if you wish to use the data for PPK.
 :class: warning
 
 This will be updated when ready :)
+
+For now, please follow the RTK Measurement video on the other tab.
 ```
 ````
 `````
