@@ -144,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
    Maintenance &amp; Updates
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   Bibliography
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -357,11 +362,6 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rtk-measurements">
-     RTK Measurements
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#raw-data-acquisition">
      Raw data acquisition
     </a>
@@ -370,12 +370,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-acquisition-in-base-station-mode">
-   Data Acquisition in base station mode
+   Data acquisition in base station mode
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#post-processing-kinematics">
-   Post-processing kinematics
+  <a class="reference internal nav-link" href="#post-processed-kinematics">
+   Post-processed kinematics
   </a>
  </li>
 </ul>
@@ -425,11 +425,6 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rtk-measurements">
-     RTK Measurements
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#raw-data-acquisition">
      Raw data acquisition
     </a>
@@ -438,12 +433,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-acquisition-in-base-station-mode">
-   Data Acquisition in base station mode
+   Data acquisition in base station mode
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#post-processing-kinematics">
-   Post-processing kinematics
+  <a class="reference internal nav-link" href="#post-processed-kinematics">
+   Post-processed kinematics
   </a>
  </li>
 </ul>
@@ -562,21 +557,11 @@ The <strong>RTK Data Link menu</strong> also allows you to enable and disable th
 </section>
 <section id="data-acquisition-in-rover-mode">
 <h2>Data Acquisition in rover mode<a class="headerlink" href="#data-acquisition-in-rover-mode" title="Permalink to this headline">#</a></h2>
-<div class="warning admonition">
-<p class="admonition-title">Work in progress</p>
-<p>This will be updated when ready :)</p>
-</div>
-<ul class="simple">
-<li><p>video of setup of the antenna (on pole etc)</p></li>
-<li><p>video of setup of the RAW GNSS data acquisition and interval</p></li>
-</ul>
-<section id="rtk-measurements">
-<h3>RTK Measurements<a class="headerlink" href="#rtk-measurements" title="Permalink to this headline">#</a></h3>
+<p>Both RTK and <em>raw</em> data acquisition (for PPK) follow roughly the same procedures for conducting measurements.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Available through YouTube.</p>
 <iframe width=100% height="400" src="https://www.youtube.com/embed/oNelh531vFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-</section>
 <section id="raw-data-acquisition">
 <h3>Raw data acquisition<a class="headerlink" href="#raw-data-acquisition" title="Permalink to this headline">#</a></h3>
 <div class="warning admonition">
@@ -589,17 +574,17 @@ The <strong>RTK Data Link menu</strong> also allows you to enable and disable th
 </section>
 </section>
 <section id="data-acquisition-in-base-station-mode">
-<span id="software-setup-base"></span><h2>Data Acquisition in base station mode<a class="headerlink" href="#data-acquisition-in-base-station-mode" title="Permalink to this headline">#</a></h2>
-<div class="warning admonition">
-<p class="admonition-title">Work in progress</p>
-<p>This will be updated when ready :)</p>
-</div>
-<ul class="simple">
-<li><p>video of setting up the base station mode.</p></li>
-</ul>
+<span id="software-setup-base"></span><h2>Data acquisition in base station mode<a class="headerlink" href="#data-acquisition-in-base-station-mode" title="Permalink to this headline">#</a></h2>
+<p>Data acquisition in base station mode is detailed in section <a class="reference internal" href="instrument_setup.html#hardware-setup-base"><span class="std std-ref">Enable base station mode</span></a>.
+<a class="reference internal" href="instrument_setup.html#hardware-setup-base"><span class="std std-ref">Enable base station mode</span></a> also shows how to set up the base station through the Captivate software.</p>
+<p>When relying on a temproary base, it is important to have the base station running for at least an hour before and after the first, respectively last rover measurement.
+Also make sure to store the Raw GNSS base station measurements on the base station SD card, and plug in the external battery while running it over longer amounts of time.</p>
+<p>Base station data are written to the <strong>DBX</strong> folder on the SD card.
+The file name consists of the <em>Point ID</em> specified in base setup and a datetime stamp, in the .M00 format.
+These files should be imported to Leica Infinity (see <a class="reference internal" href="leica_infinity.html#software-importing-infinity"><span class="std std-ref">Importing GNSS data into Infinity</span></a>) and marked as reference data when applying PPK.</p>
 </section>
-<section id="post-processing-kinematics">
-<h2>Post-processing kinematics<a class="headerlink" href="#post-processing-kinematics" title="Permalink to this headline">#</a></h2>
+<section id="post-processed-kinematics">
+<h2>Post-processed kinematics<a class="headerlink" href="#post-processed-kinematics" title="Permalink to this headline">#</a></h2>
 <p>Post-processing kinematics (PPK) involves applying corrections after measuring of the GNSS data.
 This typically involves downloading the control station data as reference data (<em>base</em>) for the correction of raw data acquired from the <em>rover</em>.
 Not much can be done in the field for this, except for collecting the raw data at 1 Hz frequencies.</p>
@@ -607,7 +592,7 @@ Not much can be done in the field for this, except for collecting the raw data a
 <p class="admonition-title">Did you know?</p>
 <p>One of the Leica GS sensors can be set to <em>base</em> station mode while using the other to record <em>rover</em> data.
 The <em>base</em> station data recorded in this way can be used as a substitute for Kartverket data, especially when recording data 10-15 km away from the nearest station.
-See <a class="reference internal" href="instrument_setup.html#hardware-setup-base"><span class="std std-ref">Enable base station mode</span></a> and <a class="reference internal" href="#software-setup-base"><span class="std std-ref">Data Acquisition in base station mode</span></a> on how to set things up.</p>
+See <a class="reference internal" href="instrument_setup.html#hardware-setup-base"><span class="std std-ref">Enable base station mode</span></a> and <a class="reference internal" href="#software-setup-base"><span class="std std-ref">Data acquisition in base station mode</span></a> on how to set things up.</p>
 </div>
 </section>
 </section>

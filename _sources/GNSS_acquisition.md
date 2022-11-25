@@ -130,16 +130,8 @@ The **RTK Data Link menu** also allows you to enable and disable the connection,
 
 ## Data Acquisition in rover mode
 
-```{admonition} Work in progress
-:class: warning
+Both RTK and *raw* data acquisition (for PPK) follow roughly the same procedures for conducting measurements.
 
-This will be updated when ready :)
-```
-
-- video of setup of the antenna (on pole etc)
-- video of setup of the RAW GNSS data acquisition and interval
-
-### RTK Measurements
 
 ```{admonition} Available through YouTube.
 :class: seealso
@@ -157,17 +149,19 @@ This will be updated when ready :)
 - video of normal data collection.
 
 (software:setup:base)=
-## Data Acquisition in base station mode
+## Data acquisition in base station mode
 
-```{admonition} Work in progress
-:class: warning
+Data acquisition in base station mode is detailed in section {ref}`hardware:setup:base`.
+{ref}`hardware:setup:base` also shows how to set up the base station through the Captivate software.
 
-This will be updated when ready :)
-```
+When relying on a temproary base, it is important to have the base station running for at least an hour before and after the first, respectively last rover measurement.
+Also make sure to store the Raw GNSS base station measurements on the base station SD card, and plug in the external battery while running it over longer amounts of time.
 
-- video of setting up the base station mode.
+Base station data are written to the **DBX** folder on the SD card.
+The file name consists of the *Point ID* specified in base setup and a datetime stamp, in the .M00 format.
+These files should be imported to Leica Infinity (see {ref}`software:importing:infinity`) and marked as reference data when applying PPK.
 
-## Post-processing kinematics
+## Post-processed kinematics
 
 Post-processing kinematics (PPK) involves applying corrections after measuring of the GNSS data.
 This typically involves downloading the control station data as reference data (*base*) for the correction of raw data acquired from the *rover*.
