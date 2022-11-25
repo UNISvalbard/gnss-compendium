@@ -360,13 +360,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#data-acquisition-in-rover-mode">
    Data Acquisition in rover mode
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#raw-data-acquisition">
-     Raw data acquisition
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-acquisition-in-base-station-mode">
@@ -423,13 +416,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#data-acquisition-in-rover-mode">
    Data Acquisition in rover mode
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#raw-data-acquisition">
-     Raw data acquisition
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-acquisition-in-base-station-mode">
@@ -557,21 +543,38 @@ The <strong>RTK Data Link menu</strong> also allows you to enable and disable th
 </section>
 <section id="data-acquisition-in-rover-mode">
 <h2>Data Acquisition in rover mode<a class="headerlink" href="#data-acquisition-in-rover-mode" title="Permalink to this headline">#</a></h2>
-<p>Both RTK and <em>raw</em> data acquisition (for PPK) follow roughly the same procedures for conducting measurements.</p>
+<p>Prior to pressing <em>Measure</em>, fill out the target ID and double check the antenna height.
+The target ID should be unique for each measurement.</p>
+<p>Both RTK and <em>raw</em> data acquisition (for PPK) follow roughly the same procedures for conducting measurements.
+The main difference is that RTK data comprises both correction data and raw data; reflected in the measurement screen where the RTK positions count is shown.
+When measuring raw data over a target, make sure to collect at least 30 seconds worth of data - with longer measurements generally resulting in better results.
+A handy timer shows how long the instrument has been recording for the current measurement.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="1ad5095f-8ad7-4304-8715-703a6bd1ea66" name="e9124c87-4343-46e9-ac7c-4640962f6674" type="radio">
+</input><label class="sd-tab-label" for="1ad5095f-8ad7-4304-8715-703a6bd1ea66">
+RTK Measurement</label><div class="sd-tab-content docutils">
 <div class="seealso admonition">
 <p class="admonition-title">Available through YouTube.</p>
 <iframe width=100% height="400" src="https://www.youtube.com/embed/oNelh531vFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>The quality warning may be ignored if you wish to use the data for PPK.</p>
 </div>
-<section id="raw-data-acquisition">
-<h3>Raw data acquisition<a class="headerlink" href="#raw-data-acquisition" title="Permalink to this headline">#</a></h3>
+</div>
+<input id="55e42f43-8748-4c82-855b-b5caa4a99a3d" name="e9124c87-4343-46e9-ac7c-4640962f6674" type="radio">
+</input><label class="sd-tab-label" for="55e42f43-8748-4c82-855b-b5caa4a99a3d">
+Raw Measurement</label><div class="sd-tab-content docutils">
 <div class="warning admonition">
 <p class="admonition-title">Work in progress</p>
 <p>This will be updated when ready :)</p>
 </div>
-<ul class="simple">
-<li><p>video of normal data collection.</p></li>
-</ul>
-</section>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Double checking parameters &amp; saving.</p>
+<p>Make sure to double check the antenna height for each measurement.
+This is impossible to double check after the field campaign!</p>
+<p>Also make sure that each point is saved before moving on to the next point.
+You may have to press <em>Store</em> when not explicitly asked to store the data.</p>
+</div>
 </section>
 <section id="data-acquisition-in-base-station-mode">
 <span id="software-setup-base"></span><h2>Data acquisition in base station mode<a class="headerlink" href="#data-acquisition-in-base-station-mode" title="Permalink to this headline">#</a></h2>

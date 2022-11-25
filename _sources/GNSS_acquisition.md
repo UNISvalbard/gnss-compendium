@@ -130,23 +130,42 @@ The **RTK Data Link menu** also allows you to enable and disable the connection,
 
 ## Data Acquisition in rover mode
 
+Prior to pressing *Measure*, fill out the target ID and double check the antenna height.
+The target ID should be unique for each measurement.
+
 Both RTK and *raw* data acquisition (for PPK) follow roughly the same procedures for conducting measurements.
+The main difference is that RTK data comprises both correction data and raw data; reflected in the measurement screen where the RTK positions count is shown.
+When measuring raw data over a target, make sure to collect at least 30 seconds worth of data - with longer measurements generally resulting in better results.
+A handy timer shows how long the instrument has been recording for the current measurement.
 
-
+`````{tab-set}
+````{tab-item} RTK Measurement
 ```{admonition} Available through YouTube.
 :class: seealso
 <iframe width=100% height="400" src="https://www.youtube.com/embed/oNelh531vFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The quality warning may be ignored if you wish to use the data for PPK.
 ```
+````
 
-### Raw data acquisition
-
+````{tab-item} Raw Measurement
 ```{admonition} Work in progress
 :class: warning
 
 This will be updated when ready :)
 ```
+````
+`````
 
-- video of normal data collection.
+```{admonition} Double checking parameters & saving.
+:class: warning
+
+Make sure to double check the antenna height for each measurement.
+This is impossible to double check after the field campaign!
+
+Also make sure that each point is saved before moving on to the next point.
+You may have to press *Store* when not explicitly asked to store the data.
+```
 
 (software:setup:base)=
 ## Data acquisition in base station mode
