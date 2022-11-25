@@ -126,7 +126,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="GNSS_acquisition.html">
-   Simple data acquisition
+   GNSS Data acquisition with Leica Captivate
   </a>
  </li>
  <li class="toctree-l1">
@@ -335,6 +335,21 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#controller-setup">
+     Controller setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tripod-setup">
+     Tripod setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-pole-setup">
+     Single pole setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#controller-startup">
      Controller startup
     </a>
@@ -388,6 +403,21 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#controller-setup">
+     Controller setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tripod-setup">
+     Tripod setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-pole-setup">
+     Single pole setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#controller-startup">
      Controller startup
     </a>
@@ -428,39 +458,115 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="instrument-setup">
 <h1>Instrument setup<a class="headerlink" href="#instrument-setup" title="Permalink to this headline">#</a></h1>
-<div class="warning admonition">
-<p class="admonition-title">Work in progress</p>
-<p>This will be updated when ready :)</p>
-</div>
 <section id="hardware-setup">
 <h2>Hardware setup<a class="headerlink" href="#hardware-setup" title="Permalink to this headline">#</a></h2>
-<div class="warning admonition">
-<p class="admonition-title">Work in progress</p>
-<p>This will be updated when ready :)</p>
+<section id="controller-setup">
+<span id="id1"></span><h3>Controller setup<a class="headerlink" href="#controller-setup" title="Permalink to this headline">#</a></h3>
+<p>The CS20 controller units have a power putton as part of the keyboard.
+Prior to using it, turn it around and insert a compatible battery in the battery slot in the backside of the unit.
+Once done, close and lock the cover and insert an SD on the bottom side of the controller unit.
+This, too, is covered by a lockable cover.
+Lock it after the SD card has been inserted.
+Then proceed by powering on the device and follow the instructions laid out in <a class="reference internal" href="#software-setup"><span class="std std-ref">Software Setup</span></a>.</p>
+</section>
+<section id="tripod-setup">
+<h3>Tripod setup<a class="headerlink" href="#tripod-setup" title="Permalink to this headline">#</a></h3>
+<figure class="align-default" id="id2">
+<img alt="_images/tripod-setup_full-01.png" src="_images/tripod-setup_full-01.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The tripod setup in its most basic form (missing the height hook and having the battery on the floor).</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The tripod setup is typically used when measuring the same location over longer time periods, such as when measuring in base station mode.
+Proceed by setting up the tripod as level as possible.
+Then mount and level the tribrach, ensuring the tribrach is over the marker.
+Then place and lock the carier in the tribrach and screw the GS sensor onto the carrier pin.
+Once again, double check that the tribrach is still level.
+If using the external battery, hang it onto a tripod leg.
+Then attach the height hook into the carrier and measure the antenna height using the height hook.
+You are then ready to start the GS sensor.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="ba9d56dc-7001-4194-89c8-4271cbff2835" name="bbd1762f-3898-4f18-b59f-9518f4bd1024" type="radio">
+</input><label class="sd-tab-label" for="ba9d56dc-7001-4194-89c8-4271cbff2835">
+GS18 on tribrach and tripod</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="id5">
+<img alt="_images/GS18_on_tribrach_tripod_with_external_battery.jpg" src="_images/GS18_on_tribrach_tripod_with_external_battery.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">The tripod setup in its most basic form (missing the height hook and having the battery on the floor).</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
+<input id="3f0ddd6d-febb-40b7-be55-730f16f1a141" name="bbd1762f-3898-4f18-b59f-9518f4bd1024" type="radio">
+</input><label class="sd-tab-label" for="3f0ddd6d-febb-40b7-be55-730f16f1a141">
+Leveling the tribrach</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="id6">
+<img alt="_images/Leveling-the-tribrach.jpg" src="_images/Leveling-the-tribrach.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The tripod setup in its most basic form (missing the height hook and having the battery on the floor).</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Step-by-step in the manual</p>
+<p>A step-by-step equipment setup is also provided in the manual.
+Please refer to <a class="reference external" href="http://www.surveyteq.com/uploads/p_27AADE49-4B3B-AC7D-F9FB-C27769D1D218-1517301401.pdf">page 32-36 of the GS16 manual</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">surveyteq</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">p_27AADE49</span><span class="o">-</span><span class="mi">4</span><span class="n">B3B</span><span class="o">-</span><span class="n">AC7D</span><span class="o">-</span><span class="n">F9FB</span><span class="o">-</span><span class="n">C27769D1D218</span><span class="o">-</span><span class="mf">1517301401.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>Alternatively, please refer to <a class="reference external" href="http://www.surveyteq.com/uploads/p_D8C5E8F5-8F71-A298-3851-2E6051F80551-1608202889.pdf">page 28/29 of the GS18 manual</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">surveyteq</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">p_D8C5E8F5</span><span class="o">-</span><span class="mi">8</span><span class="n">F71</span><span class="o">-</span><span class="n">A298</span><span class="o">-</span><span class="mi">3851</span><span class="o">-</span><span class="mf">2E6051</span><span class="n">F80551</span><span class="o">-</span><span class="mf">1608202889.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="single-pole-setup">
+<h3>Single pole setup<a class="headerlink" href="#single-pole-setup" title="Permalink to this headline">#</a></h3>
+<p>The pole setup is more mobile than the tripod setup and the given choice for the rover.
+Attach the GS sensor to the pole.
+Lock the pole in a fixed position (e.g. 1.8 m or 2 m), and turn the sensor on (see <a class="reference internal" href="#sensor-startup"><span class="std std-ref">Sensor startup</span></a>).
+When measuring, always make sure to keep the pole as level as possible.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Step-by-step in the manual</p>
+<p>A step-by-step equipment setup is also provided in the manual.
+Please refer to <a class="reference external" href="http://www.surveyteq.com/uploads/p_27AADE49-4B3B-AC7D-F9FB-C27769D1D218-1517301401.pdf">page 28-31 of the GS16 manual</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">surveyteq</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">p_27AADE49</span><span class="o">-</span><span class="mi">4</span><span class="n">B3B</span><span class="o">-</span><span class="n">AC7D</span><span class="o">-</span><span class="n">F9FB</span><span class="o">-</span><span class="n">C27769D1D218</span><span class="o">-</span><span class="mf">1517301401.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>Alternatively, please refer to <a class="reference external" href="http://www.surveyteq.com/uploads/p_D8C5E8F5-8F71-A298-3851-2E6051F80551-1608202889.pdf">page 29-33 of the GS18 manual</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">surveyteq</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">uploads</span><span class="o">/</span><span class="n">p_D8C5E8F5</span><span class="o">-</span><span class="mi">8</span><span class="n">F71</span><span class="o">-</span><span class="n">A298</span><span class="o">-</span><span class="mi">3851</span><span class="o">-</span><span class="mf">2E6051</span><span class="n">F80551</span><span class="o">-</span><span class="mf">1608202889.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+</div>
+</section>
 <section id="controller-startup">
 <h3>Controller startup<a class="headerlink" href="#controller-startup" title="Permalink to this headline">#</a></h3>
+<p>Besides the steps outlined in <a class="reference internal" href="#controller-setup"><span class="std std-ref">Controller setup</span></a>, not much more can be done to start up the controller.
+Simply press and hold the power putton until the controller starts up.
+Then proceed with the next sections on how to start the GS sensors.
+The interface of Leica Captivate (the software running on the CS20 controllers) is detailed in <a class="reference internal" href="GNSS_acquisition.html#gnss-data-acqusition"><span class="std std-ref">GNSS Data acquisition with Leica Captivate</span></a>.</p>
 <div class="warning admonition">
-<p class="admonition-title">Work in progress</p>
-<p>This will be updated when ready :)</p>
+<p class="admonition-title">Do not cross-pair the controllers to the sensors</p>
+<p>Both CS20 controllers and the GS16 and GS18 sensor units are marked to indicate their <em>standard</em> pairing; i.e., a set of controller with GSxx sensor.
+Out of experience, it is best to keep the <em>standard pairs</em>, and only connect to the GS16 sensor with the CS20 3.75 controller and the GS18 sensor to the CS20 4G controller - otherwise you will find yourself lost in a barrage of connection losses, etc.</p>
 </div>
 </section>
 <section id="sensor-startup">
-<h3>Sensor startup<a class="headerlink" href="#sensor-startup" title="Permalink to this headline">#</a></h3>
+<span id="id3"></span><h3>Sensor startup<a class="headerlink" href="#sensor-startup" title="Permalink to this headline">#</a></h3>
 <p>Although similar in appearance, the GS16 and GS18 sensors have slightly different operating procedures and specifications.
 This also extends to the location of the battery and (micro)SD card slot readers.
 The videos below highlight where and how to insert the (micro)SD cards and batteries into the respective sensors.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="90eb2b15-8bea-48a5-87fa-3f8f1271213c" name="d31710e4-dd8c-41b2-89dd-325c78651b97" type="radio">
-</input><label class="sd-tab-label" for="90eb2b15-8bea-48a5-87fa-3f8f1271213c">
+<input checked="checked" id="4588546d-5894-44d6-ba25-301693d0a92e" name="2d4da378-d73e-4181-bd68-504cefdd3206" type="radio">
+</input><label class="sd-tab-label" for="4588546d-5894-44d6-ba25-301693d0a92e">
 GS16</label><div class="sd-tab-content docutils">
 <div class="seealso admonition">
 <p class="admonition-title">Available through YouTube.</p>
 <iframe width=100% height=400 src="https://www.youtube.com/embed/lLBGDRlqAeo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
-<input id="da82805a-e22a-46f2-b21e-ad551e0af6a1" name="d31710e4-dd8c-41b2-89dd-325c78651b97" type="radio">
-</input><label class="sd-tab-label" for="da82805a-e22a-46f2-b21e-ad551e0af6a1">
+<input id="cb60fbc5-1cf8-409b-ba50-bbecfcd75139" name="2d4da378-d73e-4181-bd68-504cefdd3206" type="radio">
+</input><label class="sd-tab-label" for="cb60fbc5-1cf8-409b-ba50-bbecfcd75139">
 GS18</label><div class="sd-tab-content docutils">
 <div class="seealso admonition">
 <p class="admonition-title">Available through YouTube.</p>
@@ -468,10 +574,42 @@ GS18</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
+<p>The GS16 and GS18 have distinctive icons next to the power button that inform you about the mode of operation, power levels, and more.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="1576cdee-cc75-41c1-b0eb-0ec1e6385632" name="d26aa6ad-80e7-4300-838e-9d94c3f9c349" type="radio">
+</input><label class="sd-tab-label" for="1576cdee-cc75-41c1-b0eb-0ec1e6385632">
+GS16</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="gs16-icons">
+<img alt="_images/GS16_icons.png" src="_images/GS16_icons.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The GS16 icons are more straightforward than those on the GS18.
+From left to right along the top arch:
+Bluetooth/Wireless connection, SD card activity, positioning, base station mode/transmitting, rover mode/receiving.
+The battery icon and power cable represent battery level and external power, respectively.</span><a class="headerlink" href="#gs16-icons" title="Permalink to this image">#</a></p>
+<div class="legend">
+<p>Image modified from the Leica GS16 manual.</p>
+</div>
+</figcaption>
+</figure>
+</div>
+<input id="32883ff0-0df1-41c8-a249-646a14b61e38" name="d26aa6ad-80e7-4300-838e-9d94c3f9c349" type="radio">
+</input><label class="sd-tab-label" for="32883ff0-0df1-41c8-a249-646a14b61e38">
+GS18</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="gs18-icons">
+<img alt="_images/GS18_icons.jpg" src="_images/GS18_icons.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Top row from left to right:
+GNSS positioning, tilt correction, base station mode, rover (receiver) mode.
+Then follow the power button (left) and operations mode button (right), followed by left to right:
+WiFi (and BlueTooth), SD card (blink = writing data), battery level, external power supply.</span><a class="headerlink" href="#gs18-icons" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
 </section>
 </section>
 <section id="software-setup">
-<h2>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">#</a></h2>
+<span id="id4"></span><h2>Software Setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">#</a></h2>
 <section id="connecting-and-configuring-the-gs-sensor">
 <h3>Connecting and configuring the GS Sensor<a class="headerlink" href="#connecting-and-configuring-the-gs-sensor" title="Permalink to this headline">#</a></h3>
 <p>Once the sensor and controller have been turned on and mounted on the poles, you will need to connect the controller with the sensors, specifying the correct/absolute height of the sensor above the measuring point.</p>

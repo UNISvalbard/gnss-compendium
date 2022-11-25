@@ -457,9 +457,18 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="gnss-data-acquisition-with-leica-captivate">
-<h1>GNSS Data acquisition with Leica Captivate<a class="headerlink" href="#gnss-data-acquisition-with-leica-captivate" title="Permalink to this headline">#</a></h1>
+<span id="gnss-data-acqusition"></span><h1>GNSS Data acquisition with Leica Captivate<a class="headerlink" href="#gnss-data-acquisition-with-leica-captivate" title="Permalink to this headline">#</a></h1>
 <p>Once the hardware has been setup, it is time to power up the Leica controller with Leica Captivate software.
 This software simplifies the data project management and acquisition.</p>
+<div class="suggestion admonition">
+<p class="admonition-title">RTK? PPK? PPP?</p>
+<p>RTK, PPK and PPP are just some of the acronyms frequently used by the GNSS community.</p>
+<p>RTK stands for real-time kinematics, and uses base station data to reduce the error of your measured location in real time - down to centimetre accuracies in static mode.</p>
+<p>PPK (post-processed kinematics) uses the same base station as part of post-processing, allowing for much high accuracy and milimetre-level errors of the measurements  - down to milimetre accuracies in static mode.</p>
+<p>PPP (precise point positioning) is relatively new, and, like RTK, allows for real-time corrections.
+Unlike RTK, PPP uses corrections from a network of global reference stations directly obtained from the GNSS networks; no need for a temporary base or fixed reference! Accuracies down to a few centimetres can be achieved. See e.g. <span id="id1">Luo <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="X. Luo, S. Schaufler, M. Branzanti, and J. Chen. Assessing the benefits of Galileo to high-precision GNSS positioning – RTK, PPP and post-processing. Advances in Space Research, 68(12):4916–4931, December 2021. doi:10.1016/j.asr.2020.08.022.">1</a>]</span> for more information.</p>
+<p>This tutorial only covers RTK and PPK modes - feel free to <a class="reference external" href="https://github.com/unisvalbard/gnss-compendium/edit/master/GNSS_acquisition.md">contribute and suggest revisions that include the PPP workflow</a>.</p>
+</div>
 <section id="create-a-new-job">
 <h2>Create a new job<a class="headerlink" href="#create-a-new-job" title="Permalink to this headline">#</a></h2>
 <p>All measurements belonging to the same project should ideally be collected together.

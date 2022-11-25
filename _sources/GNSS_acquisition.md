@@ -1,7 +1,24 @@
+(gnss:data:acqusition)=
 # GNSS Data acquisition with Leica Captivate
 
 Once the hardware has been setup, it is time to power up the Leica controller with Leica Captivate software.
 This software simplifies the data project management and acquisition.
+
+```{admonition} RTK? PPK? PPP?
+:class: suggestion
+
+RTK, PPK and PPP are just some of the acronyms frequently used by the GNSS community.
+
+RTK stands for real-time kinematics, and uses base station data to reduce the error of your measured location in real time - down to centimetre accuracies in static mode.
+
+PPK (post-processed kinematics) uses the same base station as part of post-processing, allowing for much high accuracy and milimetre-level errors of the measurements  - down to milimetre accuracies in static mode.
+
+PPP (precise point positioning) is relatively new, and, like RTK, allows for real-time corrections. 
+Unlike RTK, PPP uses corrections from a network of global reference stations directly obtained from the GNSS networks; no need for a temporary base or fixed reference! Accuracies down to a few centimetres can be achieved. See e.g. {cite:t}`luoAssessingBenefitsGalileo2021` for more information.
+
+This tutorial only covers RTK and PPK modes - feel free to [contribute and suggest revisions that include the PPP workflow](https://github.com/unisvalbard/gnss-compendium/edit/master/GNSS_acquisition.md).
+
+```
 
 ## Create a new job
 
@@ -163,3 +180,4 @@ One of the Leica GS sensors can be set to *base* station mode while using the ot
 The *base* station data recorded in this way can be used as a substitute for Kartverket data, especially when recording data 10-15 km away from the nearest station.
 See {ref}`hardware:setup:base` and {ref}`software:setup:base` on how to set things up.
 ```
+
