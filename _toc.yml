@@ -13,10 +13,12 @@ parts:
   - file: control_station_data
     title: Downloading reference data
   - file: leica_infinity
-    title: Post-kinematic processing
+    title: Post-processed kinematics (PPK)
   - file: updating
     title: Maintenance & Updates
+  - file: references
+    title: Bibliography
 - caption: External Links
   chapters:
   - url: https://unisvalbard.github.io/exbooks/
-    title: UNIS Compendium Overview
+    title: UNIS Compendium Portal

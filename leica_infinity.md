@@ -28,7 +28,7 @@ Create a new project from scratch in Leica Infinity.
 
 You are then ready to proceed with changing the project's coordinate reference system (crs), importing data, adding ellipsoid to orthogonal height corrections, and more.
 
-## Transfering and importing GNSS data from Captivate into Infinity
+## Transfering GNSS data from Captivate into Infinity
 
 Before accessing the measured GNSS data in Leica Infinity, the measurements need to be transferred over from the controller to the computer.
 First, transfer the Job data from the internal memory of the controller to the SD card, using Leica Captivate (i.e., the controller software).
@@ -49,6 +49,9 @@ The `.m00` file is found within the **DBX** directory on the SD card, under the 
 
 Importing raw GNSS rover data from the SD card.
 ```
+
+(software:importing:infinity)=
+## Importing GNSS data into Infinity
 
 Once the raw GNSS data have been imported, do the same with the reference data from the base or control station.
 Permanent base station data can be obtained from e.g. Kartverket, as detailed in {ref}`base:station:reference:data:download`.

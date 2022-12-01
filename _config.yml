@@ -2,7 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: UNIS GNSS Compendium
-author: Peter Betlem
+author: Peter Betlem and Contributors
+copyright: "2022 (CC-BY-NC except where otherwise stated)"
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -13,8 +14,8 @@ execute:
 # Define the name of the latex output file for PDF builds
 
 # Add a bibtex file so that we can create citations
-#bibtex_bibfiles:
-#  - references.bib
+bibtex_bibfiles:
+  - references.bib
 
 # Information about where the book exists on the web
 repository:
@@ -30,3 +31,8 @@ html:
   extra_navbar: ""
   use_edit_page_button: true
   announcement: "Found this tutorial helpful? Please participate in the survey!"
+
+sphinx:
+  config:
+    #bibtex_reference_style: author_year
+    bibtex_default_style: plain

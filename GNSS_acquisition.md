@@ -1,7 +1,24 @@
+(gnss:data:acqusition)=
 # GNSS Data acquisition with Leica Captivate
 
 Once the hardware has been setup, it is time to power up the Leica controller with Leica Captivate software.
 This software simplifies the data project management and acquisition.
+
+```{admonition} RTK? PPK? PPP?
+:class: suggestion
+
+RTK, PPK and PPP are just some of the acronyms frequently used by the GNSS community.
+
+RTK stands for real-time kinematics, and uses base station data to reduce the error of your measured location in real time - down to centimetre accuracies in static mode.
+
+PPK (post-processed kinematics) uses the same base station as part of post-processing, allowing for much high accuracy and milimetre-level errors of the measurements  - down to milimetre accuracies in static mode.
+
+PPP (precise point positioning) is relatively new, and, like RTK, allows for real-time corrections. 
+Unlike RTK, PPP uses corrections from a network of global reference stations directly obtained from the GNSS networks; no need for a temporary base or fixed reference! Accuracies down to a few centimetres can be achieved. See e.g. {cite:t}`luoAssessingBenefitsGalileo2021` for more information.
+
+This tutorial only covers RTK and PPK modes - feel free to [contribute and suggest revisions that include the PPP workflow](https://github.com/unisvalbard/gnss-compendium/edit/master/GNSS_acquisition.md).
+
+```
 
 ## Create a new job
 
@@ -113,44 +130,59 @@ The **RTK Data Link menu** also allows you to enable and disable the connection,
 
 ## Data Acquisition in rover mode
 
-```{admonition} Work in progress
-:class: warning
+Prior to pressing *Measure*, fill out the target ID and double check the antenna height.
+The target ID should be unique for each measurement.
 
-This will be updated when ready :)
-```
+Both RTK and *raw* data acquisition (for PPK) follow roughly the same procedures for conducting measurements.
+The main difference is that RTK data comprises both correction data and raw data; reflected in the measurement screen where the RTK positions count is shown.
+When measuring raw data over a target, make sure to collect at least 30 seconds worth of data - with longer measurements generally resulting in better results.
+A handy timer shows how long the instrument has been recording for the current measurement.
 
-- video of setup of the antenna (on pole etc)
-- video of setup of the RAW GNSS data acquisition and interval
-
-### RTK Measurements
-
+`````{tab-set}
+````{tab-item} RTK Measurement
 ```{admonition} Available through YouTube.
 :class: seealso
 <iframe width=100% height="400" src="https://www.youtube.com/embed/oNelh531vFg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The quality warning may be ignored if you wish to use the data for PPK.
 ```
+````
 
-### Raw data acquisition
-
+````{tab-item} Raw Measurement
 ```{admonition} Work in progress
 :class: warning
 
 This will be updated when ready :)
-```
 
-- video of normal data collection.
+For now, please follow the RTK Measurement video on the other tab.
+```
+````
+`````
+
+```{admonition} Double checking parameters & saving.
+:class: warning
+
+Make sure to double check the antenna height for each measurement.
+This is impossible to double check after the field campaign!
+
+Also make sure that each point is saved before moving on to the next point.
+You may have to press *Store* when not explicitly asked to store the data.
+```
 
 (software:setup:base)=
-## Data Acquisition in base station mode
+## Data acquisition in base station mode
 
-```{admonition} Work in progress
-:class: warning
+Data acquisition in base station mode is detailed in section {ref}`hardware:setup:base`.
+{ref}`hardware:setup:base` also shows how to set up the base station through the Captivate software.
 
-This will be updated when ready :)
-```
+When relying on a temproary base, it is important to have the base station running for at least an hour before and after the first, respectively last rover measurement.
+Also make sure to store the Raw GNSS base station measurements on the base station SD card, and plug in the external battery while running it over longer amounts of time.
 
-- video of setting up the base station mode.
+Base station data are written to the **DBX** folder on the SD card.
+The file name consists of the *Point ID* specified in base setup and a datetime stamp, in the .M00 format.
+These files should be imported to Leica Infinity (see {ref}`software:importing:infinity`) and marked as reference data when applying PPK.
 
-## Post-processing kinematics
+## Post-processed kinematics
 
 Post-processing kinematics (PPK) involves applying corrections after measuring of the GNSS data.
 This typically involves downloading the control station data as reference data (*base*) for the correction of raw data acquired from the *rover*.
@@ -163,3 +195,4 @@ One of the Leica GS sensors can be set to *base* station mode while using the ot
 The *base* station data recorded in this way can be used as a substitute for Kartverket data, especially when recording data 10-15 km away from the nearest station.
 See {ref}`hardware:setup:base` and {ref}`software:setup:base` on how to set things up.
 ```
+
