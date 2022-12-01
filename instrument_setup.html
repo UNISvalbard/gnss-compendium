@@ -126,7 +126,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="GNSS_acquisition.html">
-   GNSS Data acquisition with Leica Captivate
+   Simple data acquisition
   </a>
  </li>
  <li class="toctree-l1">
@@ -136,12 +136,17 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="leica_infinity.html">
-   Post-kinematic processing
+   Post-processed kinematics (PPK)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="updating.html">
    Maintenance &amp; Updates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -153,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference external" href="https://unisvalbard.github.io/exbooks/">
-   UNIS Compendium Overview
+   UNIS Compendium Portal
   </a>
  </li>
 </ul>
@@ -486,8 +491,8 @@ If using the external battery, hang it onto a tripod leg.
 Then attach the height hook into the carrier and measure the antenna height using the height hook.
 You are then ready to start the GS sensor.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ba9d56dc-7001-4194-89c8-4271cbff2835" name="bbd1762f-3898-4f18-b59f-9518f4bd1024" type="radio">
-</input><label class="sd-tab-label" for="ba9d56dc-7001-4194-89c8-4271cbff2835">
+<input checked="checked" id="a6b13696-1aa4-4945-b6fd-cc710c922113" name="26c6ce07-1b1e-4456-a876-173d7b2dba2a" type="radio">
+</input><label class="sd-tab-label" for="a6b13696-1aa4-4945-b6fd-cc710c922113">
 GS18 on tribrach and tripod</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id5">
 <img alt="_images/GS18_on_tribrach_tripod_with_external_battery.jpg" src="_images/GS18_on_tribrach_tripod_with_external_battery.jpg" />
@@ -496,8 +501,8 @@ GS18 on tribrach and tripod</label><div class="sd-tab-content docutils">
 </figcaption>
 </figure>
 </div>
-<input id="3f0ddd6d-febb-40b7-be55-730f16f1a141" name="bbd1762f-3898-4f18-b59f-9518f4bd1024" type="radio">
-</input><label class="sd-tab-label" for="3f0ddd6d-febb-40b7-be55-730f16f1a141">
+<input id="a65b24c2-9ac7-4abc-91b3-3be99dc164d4" name="26c6ce07-1b1e-4456-a876-173d7b2dba2a" type="radio">
+</input><label class="sd-tab-label" for="a65b24c2-9ac7-4abc-91b3-3be99dc164d4">
 Leveling the tribrach</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="id6">
 <img alt="_images/Leveling-the-tribrach.jpg" src="_images/Leveling-the-tribrach.jpg" />
@@ -557,16 +562,16 @@ Out of experience, it is best to keep the <em>standard pairs</em>, and only conn
 This also extends to the location of the battery and (micro)SD card slot readers.
 The videos below highlight where and how to insert the (micro)SD cards and batteries into the respective sensors.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4588546d-5894-44d6-ba25-301693d0a92e" name="2d4da378-d73e-4181-bd68-504cefdd3206" type="radio">
-</input><label class="sd-tab-label" for="4588546d-5894-44d6-ba25-301693d0a92e">
+<input checked="checked" id="c634541d-2bff-4d72-883d-bde00624c3a4" name="54a79635-92e1-4401-b711-549f59e80485" type="radio">
+</input><label class="sd-tab-label" for="c634541d-2bff-4d72-883d-bde00624c3a4">
 GS16</label><div class="sd-tab-content docutils">
 <div class="seealso admonition">
 <p class="admonition-title">Available through YouTube.</p>
 <iframe width=100% height=400 src="https://www.youtube.com/embed/lLBGDRlqAeo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
-<input id="cb60fbc5-1cf8-409b-ba50-bbecfcd75139" name="2d4da378-d73e-4181-bd68-504cefdd3206" type="radio">
-</input><label class="sd-tab-label" for="cb60fbc5-1cf8-409b-ba50-bbecfcd75139">
+<input id="d96d1865-430b-4fe1-a62d-d0a69ad79051" name="54a79635-92e1-4401-b711-549f59e80485" type="radio">
+</input><label class="sd-tab-label" for="d96d1865-430b-4fe1-a62d-d0a69ad79051">
 GS18</label><div class="sd-tab-content docutils">
 <div class="seealso admonition">
 <p class="admonition-title">Available through YouTube.</p>
@@ -576,8 +581,8 @@ GS18</label><div class="sd-tab-content docutils">
 </div>
 <p>The GS16 and GS18 have distinctive icons next to the power button that inform you about the mode of operation, power levels, and more.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1576cdee-cc75-41c1-b0eb-0ec1e6385632" name="d26aa6ad-80e7-4300-838e-9d94c3f9c349" type="radio">
-</input><label class="sd-tab-label" for="1576cdee-cc75-41c1-b0eb-0ec1e6385632">
+<input checked="checked" id="2c21a5f0-bae1-4fb9-8b43-4d572227fec7" name="b11bb0d1-e5b6-47b1-84e8-069e2f59cb6c" type="radio">
+</input><label class="sd-tab-label" for="2c21a5f0-bae1-4fb9-8b43-4d572227fec7">
 GS16</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="gs16-icons">
 <img alt="_images/GS16_icons.png" src="_images/GS16_icons.png" />
@@ -592,8 +597,8 @@ The battery icon and power cable represent battery level and external power, res
 </figcaption>
 </figure>
 </div>
-<input id="32883ff0-0df1-41c8-a249-646a14b61e38" name="d26aa6ad-80e7-4300-838e-9d94c3f9c349" type="radio">
-</input><label class="sd-tab-label" for="32883ff0-0df1-41c8-a249-646a14b61e38">
+<input id="5c0d7ac3-39d8-4e64-a986-9727dcde5bbc" name="b11bb0d1-e5b6-47b1-84e8-069e2f59cb6c" type="radio">
+</input><label class="sd-tab-label" for="5c0d7ac3-39d8-4e64-a986-9727dcde5bbc">
 GS18</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="gs18-icons">
 <img alt="_images/GS18_icons.jpg" src="_images/GS18_icons.jpg" />
@@ -696,9 +701,9 @@ The <em>Leica format (MDB)</em> is supported by the Leica Infinity software, whi
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Peter Betlem<br/>
+    By Peter Betlem and Contributors<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2022 (CC-BY-NC except where otherwise stated).<br/>
 </p>
         </footer>
     </div>
