@@ -30,7 +30,7 @@ html:
   use_repository_button: false
   extra_navbar: ""
   use_edit_page_button: true
-  announcement: "Found this tutorial helpful? Please participate in the survey!"
+  announcement: 'Found this tutorial helpful? Please participate in the survey (<a href="https://unisvalbard.github.io/gnss-compendium/survey.html">click here</a>) & Star me!        <iframe src="https://ghbtns.com/github-btn.html?user=UNISvalbard&repo=gnss-compendium&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>'
 
 sphinx:
   config:

@@ -18,6 +18,11 @@ parts:
     title: Maintenance & Updates
   - file: references
     title: Bibliography
+
+- caption: Questionnaire
+  chapters:
+  - file: survey.md
+
 - caption: External Links
   chapters:
   - url: https://unisvalbard.github.io/exbooks/
