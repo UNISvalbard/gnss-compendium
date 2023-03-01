@@ -14,6 +14,16 @@ This page is still being updated.
 Help is more than welcome - please edit this page (see {numref}`github_tut`).
 ```
 
+
+````{admonition} UNIS Leica Infinity Licenser Server address
+:class: seealso
+
+A Leica Infinity License Server is available at the following endpoint:
+```
+leica-license.unis.no
+```
+````
+
 ## Create a project
 
 Unless a project was previously made, Leica Infinity requires you to set up a new project.
