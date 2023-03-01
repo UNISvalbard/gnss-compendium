@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GNSS Data acquisition with Leica Captivate &#8212; UNIS GNSS Compendium</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -35,13 +34,10 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -147,6 +143,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
    Bibliography
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Questionnaire
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="survey.html">
+   Compendium Questionnaire
   </a>
  </li>
 </ul>
@@ -437,7 +445,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="gnss-data-acquisition-with-leica-captivate">
+  <div class="tex2jax_ignore mathjax_ignore section" id="gnss-data-acquisition-with-leica-captivate">
 <span id="gnss-data-acqusition"></span><h1>GNSS Data acquisition with Leica Captivate<a class="headerlink" href="#gnss-data-acquisition-with-leica-captivate" title="Permalink to this headline">#</a></h1>
 <p>Once the hardware has been setup, it is time to power up the Leica controller with Leica Captivate software.
 This software simplifies the data project management and acquisition.</p>
@@ -447,10 +455,10 @@ This software simplifies the data project management and acquisition.</p>
 <p>RTK stands for real-time kinematics, and uses base station data to reduce the error of your measured location in real time - down to centimetre accuracies in static mode.</p>
 <p>PPK (post-processed kinematics) uses the same base station as part of post-processing, allowing for much high accuracy and milimetre-level errors of the measurements  - down to milimetre accuracies in static mode.</p>
 <p>PPP (precise point positioning) is relatively new, and, like RTK, allows for real-time corrections.
-Unlike RTK, PPP uses corrections from a network of global reference stations directly obtained from the GNSS networks; no need for a temporary base or fixed reference! Accuracies down to a few centimetres can be achieved. See e.g. <span id="id1">Luo <em>et al.</em> [<a class="reference internal" href="references.html#id2" title="X. Luo, S. Schaufler, M. Branzanti, and J. Chen. Assessing the benefits of Galileo to high-precision GNSS positioning – RTK, PPP and post-processing. Advances in Space Research, 68(12):4916–4931, December 2021. doi:10.1016/j.asr.2020.08.022.">1</a>]</span> for more information.</p>
+Unlike RTK, PPP uses corrections from a network of global reference stations directly obtained from the GNSS networks; no need for a temporary base or fixed reference! Accuracies down to a few centimetres can be achieved. See e.g. <span id="id1">Luo <em>et al.</em> [<a class="reference internal" href="references.html#id2">1</a>]</span> for more information.</p>
 <p>This tutorial only covers RTK and PPK modes - feel free to <a class="reference external" href="https://github.com/unisvalbard/gnss-compendium/edit/master/GNSS_acquisition.md">contribute and suggest revisions that include the PPP workflow</a>.</p>
 </div>
-<section id="create-a-new-job">
+<div class="section" id="create-a-new-job">
 <h2>Create a new job<a class="headerlink" href="#create-a-new-job" title="Permalink to this headline">#</a></h2>
 <p>All measurements belonging to the same project should ideally be collected together.
 Leica Captivate uses <strong>Jobs</strong> for this.
@@ -474,14 +482,14 @@ Until then, one may use the global <a class="reference external" href="https://e
 <p>With the project correctly set up, you can start with the collection of data.
 The next few sections help with the setup of real-time kinematics corrections, aided by control station data.
 If this is of no interest, skip ahead to the section on data acquisition and post-processing kinematics.</p>
-</section>
-<section id="real-time-kinematics">
+</div>
+<div class="section" id="real-time-kinematics">
 <h2>Real-time kinematics<a class="headerlink" href="#real-time-kinematics" title="Permalink to this headline">#</a></h2>
 <p>Real-time kinematics (RTK) enable the live-integration of reference data to correct positional errors down to centimetres.
 Typically, RTK correction data is provided by a control station within a 10-15 kilometre range.
 Measurements beyond this range suffer exponentially increasing errors, reducing the effectiveness of performing differential measurements.
 In Svalbard, Kartverket operates control stations in both Longyearbyen and Ny Ålesund - high-precision GNSS data acquisition elsewhere requires the use of mobile base stations and/or post-processing kinematics (PPK).</p>
-<section id="wlan-connection">
+<div class="section" id="wlan-connection">
 <h3>WLAN connection<a class="headerlink" href="#wlan-connection" title="Permalink to this headline">#</a></h3>
 <p>Svalbard’s real-time corrections are available through Kartverket’s NTRIP services.
 However, the Leica Captivate controllers need internet access for this to work.
@@ -494,8 +502,8 @@ The easiest is to set up a local hotspot with your phone, then connect to the ho
 Select <strong>WLAN</strong>, and search for your mobile hotspot (in the video referred to as <em>mobile internet</em>).
 Sign in with the hotspot credentials, then continue with the connection test.
 If all went well, you return to the <strong>startup screen</strong>.</p>
-</section>
-<section id="ntrip-svalbard">
+</div>
+<div class="section" id="ntrip-svalbard">
 <h3>NTRIP Svalbard<a class="headerlink" href="#ntrip-svalbard" title="Permalink to this headline">#</a></h3>
 <p>After successfully connecting Leica Captivate to the internet, you can configure the NTRIP service.
 Below is an overview of the key parameters, though an up to date list is available at <a class="reference external" href="https://www.kartverket.no/til-lands/posisjon/brukerveiledning-posisjonstjenester">https://www.kartverket.no/til-lands/posisjon/brukerveiledning-posisjonstjenester</a>.</p>
@@ -539,9 +547,9 @@ Finally, test the connection; hopefully all checkboxes are successfully checked.
 <p>Leica Captivate should now be running in RTK mode.
 The enabled configuration can be easily checked by using the <em>RTK Data Link</em>; i.e., simply click the smartphone icon.
 The <strong>RTK Data Link menu</strong> also allows you to enable and disable the connection, and provides an overview of successfull corrections in the past minute.</p>
-</section>
-</section>
-<section id="data-acquisition-in-rover-mode">
+</div>
+</div>
+<div class="section" id="data-acquisition-in-rover-mode">
 <h2>Data Acquisition in rover mode<a class="headerlink" href="#data-acquisition-in-rover-mode" title="Permalink to this headline">#</a></h2>
 <p>Prior to pressing <em>Measure</em>, fill out the target ID and double check the antenna height.
 The target ID should be unique for each measurement.</p>
@@ -550,8 +558,8 @@ The main difference is that RTK data comprises both correction data and raw data
 When measuring raw data over a target, make sure to collect at least 30 seconds worth of data - with longer measurements generally resulting in better results.
 A handy timer shows how long the instrument has been recording for the current measurement.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="532495df-6f0f-4053-8291-75ea28e58b00" name="8a8873ff-d007-46be-91d6-78c6acb891f8" type="radio">
-</input><label class="sd-tab-label" for="532495df-6f0f-4053-8291-75ea28e58b00">
+<input checked="checked" id="7db72774-e8d6-4fda-89aa-420f5d6681f3" name="d67d60f1-0bbd-40d0-800d-ff445692d98d" type="radio">
+</input><label class="sd-tab-label" for="7db72774-e8d6-4fda-89aa-420f5d6681f3">
 RTK Measurement</label><div class="sd-tab-content docutils">
 <div class="seealso admonition">
 <p class="admonition-title">Available through YouTube.</p>
@@ -559,8 +567,8 @@ RTK Measurement</label><div class="sd-tab-content docutils">
 <p>The quality warning may be ignored if you wish to use the data for PPK.</p>
 </div>
 </div>
-<input id="a26111eb-9a9c-4333-adb0-7a147cd8e4de" name="8a8873ff-d007-46be-91d6-78c6acb891f8" type="radio">
-</input><label class="sd-tab-label" for="a26111eb-9a9c-4333-adb0-7a147cd8e4de">
+<input id="2a042402-6786-4645-afeb-63d4c2fb4b08" name="d67d60f1-0bbd-40d0-800d-ff445692d98d" type="radio">
+</input><label class="sd-tab-label" for="2a042402-6786-4645-afeb-63d4c2fb4b08">
 Raw Measurement</label><div class="sd-tab-content docutils">
 <div class="warning admonition">
 <p class="admonition-title">Work in progress</p>
@@ -576,8 +584,8 @@ This is impossible to double check after the field campaign!</p>
 <p>Also make sure that each point is saved before moving on to the next point.
 You may have to press <em>Store</em> when not explicitly asked to store the data.</p>
 </div>
-</section>
-<section id="data-acquisition-in-base-station-mode">
+</div>
+<div class="section" id="data-acquisition-in-base-station-mode">
 <span id="software-setup-base"></span><h2>Data acquisition in base station mode<a class="headerlink" href="#data-acquisition-in-base-station-mode" title="Permalink to this headline">#</a></h2>
 <p>Data acquisition in base station mode is detailed in section <a class="reference internal" href="instrument_setup.html#hardware-setup-base"><span class="std std-ref">Enable base station mode</span></a>.
 <a class="reference internal" href="instrument_setup.html#hardware-setup-base"><span class="std std-ref">Enable base station mode</span></a> also shows how to set up the base station through the Captivate software.</p>
@@ -586,8 +594,8 @@ Also make sure to store the Raw GNSS base station measurements on the base stati
 <p>Base station data are written to the <strong>DBX</strong> folder on the SD card.
 The file name consists of the <em>Point ID</em> specified in base setup and a datetime stamp, in the .M00 format.
 These files should be imported to Leica Infinity (see <a class="reference internal" href="leica_infinity.html#software-importing-infinity"><span class="std std-ref">Importing GNSS data into Infinity</span></a>) and marked as reference data when applying PPK.</p>
-</section>
-<section id="post-processed-kinematics">
+</div>
+<div class="section" id="post-processed-kinematics">
 <h2>Post-processed kinematics<a class="headerlink" href="#post-processed-kinematics" title="Permalink to this headline">#</a></h2>
 <p>Post-processing kinematics (PPK) involves applying corrections after measuring of the GNSS data.
 This typically involves downloading the control station data as reference data (<em>base</em>) for the correction of raw data acquired from the <em>rover</em>.
@@ -598,8 +606,8 @@ Not much can be done in the field for this, except for collecting the raw data a
 The <em>base</em> station data recorded in this way can be used as a substitute for Kartverket data, especially when recording data 10-15 km away from the nearest station.
 See <a class="reference internal" href="instrument_setup.html#hardware-setup-base"><span class="std std-ref">Enable base station mode</span></a> and <a class="reference internal" href="#software-setup-base"><span class="std std-ref">Data acquisition in base station mode</span></a> on how to set things up.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

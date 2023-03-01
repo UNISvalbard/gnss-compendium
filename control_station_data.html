@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Downloading base station GNSS data &#8212; UNIS GNSS Compendium</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -35,13 +34,10 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -147,6 +143,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
    Bibliography
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Questionnaire
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="survey.html">
+   Compendium Questionnaire
   </a>
  </li>
 </ul>
@@ -387,11 +395,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="downloading-base-station-gnss-data">
+  <div class="tex2jax_ignore mathjax_ignore section" id="downloading-base-station-gnss-data">
 <span id="base-station-reference-data-download"></span><h1>Downloading base station GNSS data<a class="headerlink" href="#downloading-base-station-gnss-data" title="Permalink to this headline">#</a></h1>
 <p>For post processing of the acquired dGNSS data in the field we require additional data from a base station.
 At UNIS we have access to the Longyearbyen base station data (“LYRS”) through Kartverket.</p>
-<section id="accessing-lyrs-base-station-data">
+<div class="section" id="accessing-lyrs-base-station-data">
 <h2>Accessing LYRS base station data<a class="headerlink" href="#accessing-lyrs-base-station-data" title="Permalink to this headline">#</a></h2>
 <p>This data can be downloaded through the <a class="reference external" href="https://etpos.kartverket.no">Kartverket’s etpos website</a>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">etpos.kartverket.no</span><span class="w"></span>
@@ -411,13 +419,11 @@ The webportal provides an ftp-like interface, in which files are sorted based on
 However, if you know the exact timeframe of data acquisition, specifically targeting 1h timeframes significantly lowers the processing time.</p>
 <p><a class="reference internal" href="#etpos-kartverket"><span class="std std-numref">Fig. 6</span></a> shows how to download all required data for a single day, which can be adapted for 1-hour data downloads.
 This will need to be done for all days/hours in which location data were acquired in the field.</p>
-<figure class="align-default" id="etpos-kartverket">
+<div class="figure align-default" id="etpos-kartverket">
 <img alt="_images/etpos_kartverket.gif" src="_images/etpos_kartverket.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Downloading all required rnx3 data for day 90 of the year 2022.</span><a class="headerlink" href="#etpos-kartverket" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<section id="the-python-way-of-downloading-data">
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Downloading all required rnx3 data for day 90 of the year 2022.</span><a class="headerlink" href="#etpos-kartverket" title="Permalink to this image">#</a></p>
+</div>
+<div class="section" id="the-python-way-of-downloading-data">
 <h3>The Python way of downloading data<a class="headerlink" href="#the-python-way-of-downloading-data" title="Permalink to this headline">#</a></h3>
 <p>The script below provides an alternative way of downloading the data, implementing the Python programming language.
 Make sure to specify the usernane, password, data_storage_path and dates.</p>
@@ -493,9 +499,9 @@ These can be easily downloaded through the conda package manager:</p>
 
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
