@@ -16,8 +16,9 @@ Help is more than welcome - please edit this page (see {numref}`github_tut`).
 
 
 ````{admonition} UNIS Leica Infinity Licenser Server address
-:class: tip
+:class: seealso
 
+A Leica Infinity License Server is available at the following endpoint:
 ```
 leica-license.unis.no
 ```
